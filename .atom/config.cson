@@ -1,0 +1,28 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+  "dash-ui":
+    themeColor: "White"
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "01c27192-5e52-2b15-da7e-64e239785ec7"
+  "linter-pylint":
+    disableTimeout: true
+    executablePath: "%p/env/bin/pylint"
+  "linter-shellcheck": {}
+  "linter-ui-default":
+    panelHeight: 69
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
+  welcome:
+    showOnStartup: false

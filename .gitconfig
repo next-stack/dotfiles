@@ -1,0 +1,12 @@
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[user]
+	name = Mustafa Erkan Başar
+	email = erkan@mebasar.com
+	mail = mustafaerkanbasar@gmail.com
+[core]
+	editor = nano
+[push]
+	default = simple
