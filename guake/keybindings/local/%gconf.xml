@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="clipboard_paste" mtime="1507941228" type="string">
+		<stringvalue>&lt;Primary&gt;v</stringvalue>
+	</entry>
+	<entry name="clipboard_copy" mtime="1507941225" type="string">
+		<stringvalue>&lt;Primary&gt;c</stringvalue>
+	</entry>
+	<entry name="decrease_transparency" mtime="1507943082" type="string">
+		<stringvalue>&lt;Primary&gt;&lt;Shift&gt;KP_Subtract</stringvalue>
+	</entry>
+	<entry name="increase_transparency" mtime="1507943080" type="string">
+		<stringvalue>&lt;Primary&gt;&lt;Shift&gt;KP_Add</stringvalue>
+	</entry>
+	<entry name="toggle_transparency" mtime="1507941125" type="string">
+		<stringvalue>disabled</stringvalue>
+	</entry>
+</gconf>

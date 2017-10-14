@@ -31,4 +31,4 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'atom-text-editor':
-  'cmd-alt-l': 'editor:auto-indent'
+  'ctrl-alt-l': 'editor:auto-indent'

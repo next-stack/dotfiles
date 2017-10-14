@@ -7,3 +7,5 @@ storage
 .npm
 packages
 recovery
+split-diff
+nohup.out
