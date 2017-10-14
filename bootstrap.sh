@@ -19,7 +19,7 @@ sudo ln -sf $BASEDIR/scripts/srunl.sh /usr/bin/srunl
 ln -sf $BASEDIR/guake/ $HOME/.gconf/apps/guake
 
 # Atom
-ln -sf $BASEDIR/.atom/ $HOME/.atom
+ln -sf $BASEDIR/atom/ $HOME/.atom
 
 # Autostart
 ln -sf $BASEDIR/autostart/ $HOME/.config/autostart
