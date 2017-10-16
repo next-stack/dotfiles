@@ -28,6 +28,21 @@ else
   sudo apt-get install spotify-client
 fi
 
+echo "Installing numlockx..."
+if sudo apt-get -qq install numlockx; then
+  echo "Already installed."
+else
+  # source: https://sites.google.com/site/easytipsforlinux/numlock-on-at-login-screen-1
+  sudo apt-get install numlockx
+fi
+
+echo "Installing OpenVPN..."
+if sudo apt-get -qq install openvpn; then
+  echo "Already installed."
+else
+  sudo apt-get install openvpn
+fi
+
 # Google Chrome
 echo "Install Google Chrome --> https://www.google.com/chrome/browser/desktop/index.html"
 

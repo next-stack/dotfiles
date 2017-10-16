@@ -1,10 +1,25 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="clipboard_paste" mtime="1507941228" type="string">
-		<stringvalue>&lt;Primary&gt;v</stringvalue>
+	<entry name="next_tab" mtime="1508145211" type="string">
+		<stringvalue>&lt;Super&gt;Right</stringvalue>
 	</entry>
-	<entry name="clipboard_copy" mtime="1507941225" type="string">
-		<stringvalue>&lt;Primary&gt;c</stringvalue>
+	<entry name="previous_tab" mtime="1508145207" type="string">
+		<stringvalue>&lt;Super&gt;Left</stringvalue>
+	</entry>
+	<entry name="rename_current_tab" mtime="1508145177" type="string">
+		<stringvalue>&lt;Super&gt;F2</stringvalue>
+	</entry>
+	<entry name="close_tab" mtime="1508145174" type="string">
+		<stringvalue>&lt;Super&gt;w</stringvalue>
+	</entry>
+	<entry name="new_tab" mtime="1508145171" type="string">
+		<stringvalue>&lt;Super&gt;t</stringvalue>
+	</entry>
+	<entry name="clipboard_paste" mtime="1508145227" type="string">
+		<stringvalue>&lt;Super&gt;v</stringvalue>
+	</entry>
+	<entry name="clipboard_copy" mtime="1508145226" type="string">
+		<stringvalue>&lt;Super&gt;c</stringvalue>
 	</entry>
 	<entry name="decrease_transparency" mtime="1507943082" type="string">
 		<stringvalue>&lt;Primary&gt;&lt;Shift&gt;KP_Subtract</stringvalue>

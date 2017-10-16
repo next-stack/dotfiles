@@ -13,4 +13,4 @@ NoDisplay=false
 Hidden=false
 Name[en_US]=WhatsApp Desktop
 Comment[en_US]=WhatsApp Desktop unofficial client
-X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-Delay=15

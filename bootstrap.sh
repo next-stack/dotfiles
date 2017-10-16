@@ -23,3 +23,12 @@ ln -sfn $BASEDIR/atom/ $HOME/.atom
 
 # Autostart
 ln -sfn $BASEDIR/autostart/ $HOME/.config/autostart
+
+# Numlockx
+sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
+
+# Download VPN settings for science.ru.nl servers
+if [ ! -d ./vpn ]; then
+  mkdir ./vpn
+fi
+wget https://gitlab.science.ru.nl/cncz/openvpn/raw/master/openvpn-science.ovpn -P vpn/

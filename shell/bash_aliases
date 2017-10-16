@@ -13,7 +13,7 @@ alias pmr='python manage.py runserver'
 alias jnote='jupyter notebook'
 # alias pyanac="export PATH='~/Anaconda3/bin:$PATH'"
 
-# Git alias
+# Git aliases
 alias gcam='git commit -am'
 alias gcek='git checkout'
 
@@ -22,7 +22,11 @@ alias cdwork='cd ~/Dropbox/workspaces'
 alias cdflo='cd ~/Dropbox/workspaces/Python/Floodtags_Dashboard'
 alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
 
-# Enable color support of ls and also add handy aliases
+# ls aliases
+alias la='ls -A'
+alias lal='ls -al'
+
+# Color support of ls
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -31,10 +35,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# Start Radboud Science VPN in a screen;
+alias ruvpn='screen -S ruvpn bash -c "sudo openvpn $HOME/.dotfiles/vpn/openvpn-science-ru-nl.ovpn"'
 
 # Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

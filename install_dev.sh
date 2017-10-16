@@ -15,6 +15,13 @@ else
   pip install --upgrade pip
 fi
 
+echo "Installing Screen..."
+if sudo apt-get -qq install screen; then
+  echo "Already installed."
+else
+  sudo apt-get install screen
+fi
+
 echo "Installing Virtualenv..."
 if sudo apt-get -qq install virtualenv; then
   echo "Already installed."
