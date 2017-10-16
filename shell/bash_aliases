@@ -14,8 +14,15 @@ alias jnote='jupyter notebook'
 # alias pyanac="export PATH='~/Anaconda3/bin:$PATH'"
 
 # Git aliases
+alias gadd='git add'
+alias gaa='git add -A :/'
+alias gcom='git commit'
 alias gcam='git commit -am'
 alias gcek='git checkout'
+alias gsta='git status'
+alias gbra='git branch'
+alias gpus='git push'
+alias gclo='git clone'
 
 # Folder Navigation;
 alias cdwork='cd ~/Dropbox/workspaces'
@@ -24,7 +31,7 @@ alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
 
 # ls aliases
 alias la='ls -A'
-alias lal='ls -al'
+alias ll='ls -al'
 
 # Color support of ls
 if [ -x /usr/bin/dircolors ]; then
