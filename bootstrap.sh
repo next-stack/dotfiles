@@ -3,7 +3,7 @@
 BASEDIR="$(pwd)"
 
 # Git
-ln -sfn $BASEDIR/gitconfig $HOME/.gitconfig
+ln -sfn $BASEDIR/git/gitconfig $HOME/.gitconfig
 
 # Shell
 ln -sfn $BASEDIR/shell/bashrc $HOME/.bashrc
