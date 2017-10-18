@@ -3,7 +3,7 @@
 	smudge = git hawser smudge %f
 	required = true
 [user]
-	name = Mustafa Erkan Başar
+	name = M. Erkan Basar
 	email = erkan@mebasar.com
 	mail = mustafaerkanbasar@gmail.com
 [core]

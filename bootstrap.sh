@@ -24,6 +24,9 @@ ln -sfn $BASEDIR/atom/ $HOME/.atom
 # Autostart
 ln -sfn $BASEDIR/autostart/ $HOME/.config/autostart
 
+# Pidgin
+ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
+
 # Numlockx
 sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
 

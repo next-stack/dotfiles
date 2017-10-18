@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Updating Aptitude package manager"
+sudo apt-get update
+
 echo "Installing Guake Terminal..."
 if sudo apt-get -qq install guake; then
   echo "Already installed."
@@ -43,20 +46,40 @@ else
   sudo apt-get install openvpn
 fi
 
+echo "Installing Steam..."
+if sudo apt-get -qq install steam-launcher; then
+  echo "Already installed."
+else
+  # .deb file download: http://store.steampowered.com/about/
+  sudo apt-get install steam-launcher
+fi
+
 # Google Chrome
-echo "Install Google Chrome --> https://www.google.com/chrome/browser/desktop/index.html"
+echo "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P $HOME/Downloads/
 
 # Dropbox
-echo "Install Dropbox --> https://www.dropbox.com/install-linux"
+echo "Downloading Dropbox (See https://www.dropbox.com/install-linux)"
+wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -P $HOME/Downloads/
+# TODO: See nemo-dropbox!
 
 # Atom
-echo "Install Atom --> https://atom.io/"
+echo "Downloading Atom (See https://atom.io/)"
+wget https://atom.io/download/deb -P $HOME/Downloads/
 
 # WhatsApp
-echo "Install WhatsApp --> https://github.com/Enrico204/Whatsapp-Desktop"
+echo "Downloading WhatsApp Desktop (See https://github.com/Enrico204/Whatsapp-Desktop)"
+wget https://github.com/Enrico204/Whatsapp-Desktop/releases/download/v0.3.13/whatsapp-desktop_0.3.13-1_amd64.deb -P $HOME/Downloads/
 
 # Skype
-echo "Install Skype --> https://www.skype.com/en/download-skype/skype-for-linux/"
+echo "Downloading Skype (See https://www.skype.com/en/download-skype/skype-for-linux/)"
+wget https://go.skype.com/linux.deb -P $HOME/Downloads/
 
 # Slack
-echo "Install Slack --> https://slack.com/downloads/linux"
+echo "Downloading Slack (See https://slack.com/downloads/linux)"
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb -P $HOME/Downloads/
+# TODO: See http://tipsonubuntu.com/2016/07/15/install-slack-client-ubuntu-16-04/
+
+echo "Installing Google Chrome, Dropbox, Atom, WhatsApp, Skype, Slack..."
+sudo dpkg -i $HOME/Downloads/*.deb
+sudo apt-get install -f

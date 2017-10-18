@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Updating Aptitude package manager"
+sudo apt-get update
+
 echo "Installing Git..."
 if sudo apt-get -qq install git; then
   echo "Already installed."
