@@ -15,6 +15,9 @@ ln -sfn $BASEDIR/shell/bash_logout $HOME/.bash_logout
 sudo ln -sfn $BASEDIR/scripts/tunnel.sh /usr/bin/tunnel
 sudo ln -sfn $BASEDIR/scripts/srunl.sh /usr/bin/srunl
 
+# Icons
+ln -sfn $BASEDIR/icons/ $HOME/.icons
+
 # Guake
 ln -sfn $BASEDIR/guake/ $HOME/.gconf/apps/guake
 
