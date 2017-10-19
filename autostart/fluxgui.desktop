@@ -2,6 +2,5 @@
 Icon=fluxgui
 Type=Application
 Name=f.lux indicator applet
-X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-enabled=false
 Exec=fluxgui
-
