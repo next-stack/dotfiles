@@ -1,10 +1,18 @@
 
 OS
 ---------------
--   Play button: open spotify if it's not open (currently ctrl+Play)
--   Install java
+
+-   Install java?
 
 .dotfiles
 ---------------
+
 -   Cinnamon keyboard layout and shortcut config inc. Keyboard Layout Options
--   Custom menu items?
+
+-   How to save custom Cinnamon menu items
+
+-   Skype download link
+
+-   Where is Skype config
+
+-   Where is Slack config?

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Python
-alias python='python3'
+# alias python='python3'
 
 # Environments
 alias src='. .env/bin/activate'
@@ -25,6 +25,8 @@ alias gpus='git push'
 alias gclo='git clone'
 
 # Folder Navigation;
+alias ..="cd .."
+alias cd..="cd .."
 alias cdwork='cd ~/Dropbox/workspaces'
 alias cdflo='cd ~/Dropbox/workspaces/Python/Floodtags_Dashboard'
 alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
