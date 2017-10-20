@@ -106,14 +106,14 @@ else
   echo "Already downloaded"
 fi
 
-# echo
-# echo "------------------------"
-# echo "Installing Downloaded .deb packages under $DEBPKGS/"
-# echo "------------------------"
-# sudo dpkg -i $DEBPKGS/*.deb
-#
-# echo
-# echo "------------------------"
-# echo "Installing the missing dependencies (if there is any)"
-# echo "------------------------"
-# sudo apt-get install -f
+echo
+echo "------------------------"
+echo "Installing Downloaded .deb packages under $DEBPKGS/"
+echo "------------------------"
+sudo dpkg -i $DEBPKGS/*.deb
+
+echo
+echo "------------------------"
+echo "Installing the missing dependencies (if there is any)"
+echo "------------------------"
+sudo apt-get install -f
