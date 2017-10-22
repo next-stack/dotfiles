@@ -11,8 +11,6 @@ OS
 
 -   How to save custom Cinnamon menu items
 
--   Skype download link
-
 -   Where is Skype config
 
 -   Where is Slack config?

@@ -1,3 +1,5 @@
+wget
+curl
 git
 python-pip
 screen
@@ -8,6 +10,7 @@ numlockx
 nemo-dropbox
 openvpn
 screenfetch
-steam-launcher
 fluxgui
 spotify-client
+skypeforlinux
+steam
