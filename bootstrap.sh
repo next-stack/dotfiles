@@ -3,32 +3,33 @@
 BASEDIR="$(pwd)"
 
 # Git
-ln -sfn $BASEDIR/git/gitconfig $HOME/.gitconfig
+sudo ln -sfn $BASEDIR/git/gitconfig $HOME/.gitconfig
 
 # Shell
-ln -sfn $BASEDIR/shell/bashrc $HOME/.bashrc
-ln -sfn $BASEDIR/shell/bash_profile $HOME/.bash_profile
-ln -sfn $BASEDIR/shell/bash_aliases $HOME/.bash_aliases
-ln -sfn $BASEDIR/shell/bash_logout $HOME/.bash_logout
+sudo ln -sfn $BASEDIR/shell/bashrc $HOME/.bashrc
+sudo ln -sfn $BASEDIR/shell/bash_profile $HOME/.bash_profile
+sudo ln -sfn $BASEDIR/shell/bash_aliases $HOME/.bash_aliases
+sudo ln -sfn $BASEDIR/shell/bash_logout $HOME/.bash_logout
 
 # Custom Scripts
 sudo ln -sfn $BASEDIR/scripts/tunnel.sh /usr/bin/tunnel
 sudo ln -sfn $BASEDIR/scripts/srunl.sh /usr/bin/srunl
 
 # Icons
-ln -sfn $BASEDIR/icons/ $HOME/.icons
+sudo ln -sfn $BASEDIR/icons/ $HOME/.icons
 
 # Guake
-ln -sfn $BASEDIR/guake/ $HOME/.gconf/apps/guake
+sudo ln -sfn $BASEDIR/guake/ $HOME/.gconf/apps/guake
 
 # Atom
-ln -sfn $BASEDIR/atom/ $HOME/.atom
+sudo ln -sfn $BASEDIR/atom/ $HOME/.atom
 
 # Autostart
-ln -sfn $BASEDIR/autostart/ $HOME/.config/autostart
+sudo rm -rf $HOME/.config/autostart/
+sudo ln -sfn $BASEDIR/autostart/ $HOME/.config/autostart
 
 # Pidgin
-ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
+sudo ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
 
 # Numlockx
 sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
