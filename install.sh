@@ -17,27 +17,31 @@ for package in $INSTALL_PKGS; do
 
   if ! sudo apt-get -qq install $package; then
 
-    if [[ $package = "spotify-client" ]]; then
-        # source: https://www.spotify.com/nl/download/linux/
-        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-        echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-        sudo apt-get update
-        sudo apt-get install -y spotify-client
+    if [[ $package = "tlp" ]]; then
+      sudo apt-get remove laptop-mode-tools
+      sudo add-apt-repository -y ppa:linrunner/tlp
+      sudo apt-get update
+
+    elif [[ $package = "spotify-client" ]]; then
+      # source: https://www.spotify.com/nl/download/linux/
+      sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+      echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+      sudo apt-get update
 
     elif [[ $package = "skypeforlinux" ]]; then
-        # source: https://askubuntu.com/questions/887389/how-to-install-skype-for-linux-in-ubuntu-16-04-via-console-only/964195
-        sudo apt-get install -y apt-transport-https
-        curl https://repo.skype.com/data/SKYPE-GPG-KEY | sudo apt-key add -
-        echo "deb https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skypeforlinux.list
-        sudo apt update
-        sudo apt install skypeforlinux
+      # source: https://askubuntu.com/questions/887389/how-to-install-skype-for-linux-in-ubuntu-16-04-via-console-only/964195
+      sudo apt-get install -y apt-transport-https
+      curl https://repo.skype.com/data/SKYPE-GPG-KEY | sudo apt-key add -
+      echo "deb https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skypeforlinux.list
+      sudo apt update
 
-    else
-      sudo apt-get install -y $package
     fi
+
+    sudo apt-get install -y $package
 
   else
     echo "Already installed"
+
   fi
 
 done
@@ -100,7 +104,7 @@ fi
 
 echo
 echo "------------------------"
-echo "Installing Downloaded .deb packages under $DEBPKGS/"
+echo "Installing downloaded .deb packages under $DEBPKGS/"
 echo "------------------------"
 sudo dpkg -i $DEBPKGS/*.deb
 
