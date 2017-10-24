@@ -22,13 +22,14 @@ alias gcek='git checkout'
 alias gsta='git status'
 alias gbra='git branch'
 alias gpus='git push'
+alias gpul='git pull'
 alias gclo='git clone'
 
 # Folder Navigation;
 alias ..="cd .."
 alias cd..="cd .."
-alias cdwork='cd ~/Dropbox/workspaces'
-alias cdflo='cd ~/Dropbox/workspaces/Python/Floodtags_Dashboard'
+alias cdwork='cd ~/Dropbox/workspaces/'
+alias cdflo='cd ~/Dropbox/workspaces/Python/Floodtags_Dashboard/'
 alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
 
 # ls aliases

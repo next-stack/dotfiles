@@ -7,5 +7,5 @@ Exec=mintupdate-launcher
 Terminal=false
 Type=Application
 Categories=
-X-GNOME-Autostart-Delay=10
+X-GNOME-Autostart-Delay=15
 X-MATE-Autostart-Delay=20

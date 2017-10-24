@@ -82,7 +82,7 @@ fi
 
 shift $((OPTIND-1))
 
-USERNAME=
+USERNAME=ebasar
 
 if [ -z "$USERNAME" ] ; then
   echo "ERROR: Username is not defined. Please set a username first."

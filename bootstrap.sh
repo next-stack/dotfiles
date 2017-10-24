@@ -14,12 +14,16 @@ sudo ln -sfn $BASEDIR/shell/bash_logout $HOME/.bash_logout
 # Custom Scripts
 sudo ln -sfn $BASEDIR/scripts/tunnel.sh /usr/bin/tunnel
 sudo ln -sfn $BASEDIR/scripts/srunl.sh /usr/bin/srunl
+sudo ln -sfn $BASEDIR/scripts/chats.sh /usr/bin/chats
 
 # Icons
 sudo ln -sfn $BASEDIR/icons/ $HOME/.icons
 
 # Guake
 sudo ln -sfn $BASEDIR/guake/ $HOME/.gconf/apps/guake
+
+# Redshift
+sudo ln -sfn $BASEDIR/redshift/redshift.conf $HOME/.config/redshift.conf
 
 # Atom
 sudo ln -sfn $BASEDIR/atom/ $HOME/.atom

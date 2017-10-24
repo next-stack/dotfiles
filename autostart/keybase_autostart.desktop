@@ -8,4 +8,4 @@ Type=Application
 Exec=env KEYBASE_START_UI=hideWindow run_keybase
 
 # Uncomment the following line to disable Keybase autostart:
-#Hidden=true
+Hidden=true
