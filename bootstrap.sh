@@ -42,4 +42,4 @@ sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
 if [ ! -d ./vpn ]; then
   mkdir ./vpn
 fi
-wget https://gitlab.science.ru.nl/cncz/openvpn/raw/master/openvpn-science.ovpn -P vpn/
+wget https://gitlab.science.ru.nl/cncz/openvpn/raw/master/openvpn-science.ovpn -O $BASEDIR/vpn/openvpn-science-ru-nl.ovpn

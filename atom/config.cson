@@ -18,7 +18,7 @@
     userId: "01c27192-5e52-2b15-da7e-64e239785ec7"
   "linter-pylint":
     disableTimeout: true
-    executablePath: "%p/env/bin/pylint"
+    executablePath: "%p/.env/bin/pylint"
   "linter-shellcheck": {}
   "linter-ui-default":
     panelHeight: 69

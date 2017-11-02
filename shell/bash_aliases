@@ -8,9 +8,10 @@ alias src='. .env/bin/activate'
 alias srch='. env/bin/activate'
 alias lama='. ~/lamachine/bin/activate'
 
-# Scripts to run
+# Program Shortcuts
 alias pmr='python manage.py runserver'
 alias jnote='jupyter notebook'
+alias venv='virtualenv -p python3 .env'
 # alias pyanac="export PATH='~/Anaconda3/bin:$PATH'"
 
 # Git aliases
