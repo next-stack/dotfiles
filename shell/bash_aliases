@@ -7,6 +7,7 @@
 alias src='. .env/bin/activate'
 alias srch='. env/bin/activate'
 alias lama='. ~/lamachine/bin/activate'
+alias deac='deactivate'
 
 # Program Shortcuts
 alias pmr='python manage.py runserver'
@@ -30,12 +31,13 @@ alias gclo='git clone'
 alias ..="cd .."
 alias cd..="cd .."
 alias cdwork='cd ~/Dropbox/workspaces/'
-alias cdflo='cd ~/Dropbox/workspaces/Python/Floodtags_Dashboard/'
+alias cdflo='cd ~/Dropbox/workspaces/Web/Floodtags_Dashboard/'
 alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
 
 # ls aliases
 alias la='ls -A'
 alias ll='ls -al'
+alias lls='ls -lsh'
 
 # Color support of ls
 if [ -x /usr/bin/dircolors ]; then

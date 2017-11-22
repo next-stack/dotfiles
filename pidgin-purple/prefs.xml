@@ -416,8 +416,8 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='0'/>
-				<pref name='y' type='int' value='335'/>
+				<pref name='x' type='int' value='868'/>
+				<pref name='y' type='int' value='211'/>
 				<pref name='width' type='int' value='1052'/>
 				<pref name='height' type='int' value='812'/>
 				<pref name='animate_buddy_icons' type='bool' value='1'/>

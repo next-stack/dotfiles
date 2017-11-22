@@ -2,6 +2,8 @@ wget
 curl
 git
 python-pip
+openjdk-8-jre-headless
+cmake
 screen
 virtualenv
 shellcheck
