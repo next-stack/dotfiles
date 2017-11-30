@@ -38,8 +38,17 @@ sudo ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
 # Numlockx
 sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
 
-# Download VPN settings for science.ru.nl servers
-if [ ! -d ./vpn ]; then
-  mkdir ./vpn
+# Download OpenVPN settings for science.ru.nl servers
+if [ ! -d $BASEDIR/vpn ]; then
+  mkdir $BASEDIR/vpn
 fi
-wget https://gitlab.science.ru.nl/cncz/openvpn/raw/master/openvpn-science.ovpn -O $BASEDIR/vpn/openvpn-science-ru-nl.ovpn
+OVPNFILE=$BASEDIR/vpn/openvpn-science-ru-nl.ovpn
+LOGINCONF=$BASEDIR/vpn/openvpn-science-ru-nl.conf
+wget https://gitlab.science.ru.nl/cncz/openvpn/raw/master/openvpn-science.ovpn -O $OVPNFILE
+if [ ! -f $LOGINCONF ]; then
+  echo "< username >@science.ru.nl" >> $LOGINCONF
+fi
+if [ -f $LOGINCONF ]; then
+  echo "" >> $OVPNFILE
+  echo "auth-user-pass $LOGINCONF" >> $OVPNFILE
+fi

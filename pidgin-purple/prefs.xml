@@ -416,10 +416,10 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='868'/>
-				<pref name='y' type='int' value='211'/>
+				<pref name='x' type='int' value='2788'/>
+				<pref name='y' type='int' value='224'/>
 				<pref name='width' type='int' value='1052'/>
-				<pref name='height' type='int' value='812'/>
+				<pref name='height' type='int' value='803'/>
 				<pref name='animate_buddy_icons' type='bool' value='1'/>
 				<pref name='entry_height' type='int' value='54'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>

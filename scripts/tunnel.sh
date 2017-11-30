@@ -3,6 +3,7 @@
 # Author: M. Erkan Basar
 # Website: http://www.mebasar.com
 # Email: erkan@mebasar.com
+# GitHub: erkanbasar
 
 # Create a symlink to use it with a single command (as shown in Usage).
 # sudo ln -sfn /path/to/folder/tunnel.sh /usr/bin/tunnel

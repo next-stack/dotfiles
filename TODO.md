@@ -1,9 +1,3 @@
-
-OS
----------------
-
--   Install java?
-
 .dotfiles
 ---------------
 
@@ -11,6 +5,6 @@ OS
 
 -   How to save custom Cinnamon menu items
 
--   Where is Skype config
-
--   Where is Slack config?
+-   Missing configs
+  -   Skype
+  -   Slack

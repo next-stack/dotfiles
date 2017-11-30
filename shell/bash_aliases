@@ -6,7 +6,7 @@
 # Environments
 alias src='. .env/bin/activate'
 alias srch='. env/bin/activate'
-alias lama='. ~/lamachine/bin/activate'
+alias lama='. $HOME/lamachine/bin/activate'
 alias deac='deactivate'
 
 # Program Shortcuts
@@ -30,9 +30,9 @@ alias gclo='git clone'
 # Folder Navigation;
 alias ..="cd .."
 alias cd..="cd .."
-alias cdwork='cd ~/Dropbox/workspaces/'
-alias cdflo='cd ~/Dropbox/workspaces/Web/Floodtags_Dashboard/'
-alias cdeifd='cd ~/Dropbox/workspaces/Python/EIFD/'
+alias cdwork='cd $HOME/Dropbox/workspaces/'
+alias cdflo='cd $HOME/Dropbox/workspaces/Web/Floodtags_Dashboard/'
+alias cdeifd='cd $HOME/Dropbox/workspaces/Python/EIFD/'
 
 # ls aliases
 alias la='ls -A'
@@ -41,7 +41,7 @@ alias lls='ls -lsh'
 
 # Color support of ls
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
