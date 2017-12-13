@@ -8,6 +8,7 @@
   "dash-ui":
     themeColor: "White"
   editor:
+    fontSize: 13
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
