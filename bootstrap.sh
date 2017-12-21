@@ -27,6 +27,7 @@ sudo ln -sfn $BASEDIR/redshift/redshift.conf $HOME/.config/redshift.conf
 
 # Atom
 sudo ln -sfn $BASEDIR/atom/ $HOME/.atom
+bash $BASEDIR/scripts/atompkg.sh -i
 
 # Autostart
 sudo rm -rf $HOME/.config/autostart/

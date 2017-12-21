@@ -28,8 +28,9 @@ alias gpul='git pull'
 alias gclo='git clone'
 
 # Folder Navigation;
-alias ..="cd .."
-alias cd..="cd .."
+alias ..='cd ..'
+alias cd..='cd ..'
+alias cddot='cd $HOME/.dotfiles'
 alias cdwork='cd $HOME/Dropbox/workspaces/'
 alias cdflo='cd $HOME/Dropbox/workspaces/Web/Floodtags_Dashboard/'
 alias cdeifd='cd $HOME/Dropbox/workspaces/Python/EIFD/'
