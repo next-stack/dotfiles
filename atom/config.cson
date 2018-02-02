@@ -8,6 +8,7 @@
   "dash-ui":
     themeColor: "White"
   editor:
+    fontSize: 13
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -25,5 +26,6 @@
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
+  "tree-view": {}
   welcome:
     showOnStartup: false

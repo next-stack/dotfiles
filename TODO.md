@@ -9,9 +9,9 @@ Missing configs
 Missing packages in list
 ------------------------
 List of the packages considered to be added to packages.list
--  GNU customizer
-
+-  GRUB customizer
+-  Heroku
 
 Remove packages
 ---------------
-List the pakcages that should be removed after installation
+List the packages that should be removed after installation

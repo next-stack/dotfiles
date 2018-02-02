@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Updating Aptitude package manager..."
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 sudo apt-get update
 
 INSTALL_PKGS="$(cat packages.system)"
@@ -11,9 +11,9 @@ INSTALL_PKGS="$(cat packages.system)"
 for package in $INSTALL_PKGS; do
 
   echo
-  echo "------------------------"
+  echo "---------------------------------------------------------------------------"
   echo "Installing $package"
-  echo "------------------------"
+  echo "---------------------------------------------------------------------------"
 
   if ! sudo apt-get -qq install $package; then
 
@@ -53,9 +53,9 @@ if [ ! -d $DEBPKGS ]; then
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 if [ ! -f $DEBPKGS/google-chrome.deb ]; then
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DEBPKGS/google-chrome.deb
 else
@@ -63,9 +63,9 @@ else
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Downloading Atom (See https://atom.io/)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 if [ ! -f $DEBPKGS/atom.deb ]; then
   wget https://atom.io/download/deb -O $DEBPKGS/atom.deb
 else
@@ -73,9 +73,9 @@ else
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Downloading WhatsApp Desktop (See https://github.com/Enrico204/Whatsapp-Desktop)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 if [ ! -f $DEBPKGS/whatsapp-desktop.deb ]; then
   wget https://github.com/Enrico204/Whatsapp-Desktop/releases/download/v0.3.13/whatsapp-desktop_0.3.13-1_amd64.deb -O $DEBPKGS/whatsapp-desktop.deb
 else
@@ -83,9 +83,9 @@ else
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Downloading Slack (See https://slack.com/downloads/linux)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
   wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb -O $DEBPKGS/slack-desktop.deb
 else
@@ -93,9 +93,9 @@ else
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Downloading keybase (See https://keybase.io/docs/the_app/install_linux)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 if [ ! -f $DEBPKGS/keybase.deb ]; then
   wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb
 else
@@ -103,13 +103,19 @@ else
 fi
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Installing downloaded .deb packages under $DEBPKGS/"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 sudo dpkg -i $DEBPKGS/*.deb
 
 echo
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 echo "Installing the missing dependencies (if there is any)"
-echo "------------------------"
+echo "---------------------------------------------------------------------------"
 sudo apt-get install -f
+
+echo
+echo "---------------------------------------------------------------------------"
+echo "Setting up symlinks etc."
+echo "---------------------------------------------------------------------------"
+bash bootstrap.sh
