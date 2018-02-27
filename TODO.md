@@ -9,8 +9,9 @@ Missing configs
 Missing packages in list
 ------------------------
 List of the packages considered to be added to packages.list
--  GRUB customizer
--  Heroku
+-   GRUB customizer
+-   Heroku
+-   Node.js, npm
 
 Remove packages
 ---------------

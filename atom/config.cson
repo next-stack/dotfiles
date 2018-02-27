@@ -19,7 +19,7 @@
   latextools: {}
   "linter-pylint":
     disableTimeout: true
-    executablePath: "%p/.env/bin/pylint"
+    executablePath: "/home/mebasar/.env/bin/pylint"
   "linter-shellcheck": {}
   "linter-ui-default":
     panelHeight: 69

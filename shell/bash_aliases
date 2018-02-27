@@ -32,7 +32,8 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias cddot='cd $HOME/.dotfiles'
 alias cdwork='cd $HOME/Dropbox/workspaces/'
-alias cdflo='cd $HOME/Dropbox/workspaces/Web/Floodtags_Dashboard/'
+alias cdflo='cd $HOME/Dropbox/workspaces/FloodTags/'
+alias cddash='cd $HOME/Dropbox/workspaces/FloodTags/Data_Distribution/dashboard/'
 alias cdeifd='cd $HOME/Dropbox/workspaces/Python/EIFD/'
 
 # ls aliases
