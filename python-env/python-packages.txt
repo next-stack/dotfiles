@@ -6,3 +6,4 @@ requests
 scipy
 scikit-learn
 pylint
+polyglot

@@ -24,6 +24,7 @@ MarkupSafe==1.0
 matplotlib==2.1.2
 mccabe==0.6.1
 mistune==0.8.3
+Morfessor==2.0.4
 nbconvert==5.3.1
 nbformat==4.4.0
 nltk==3.2.5
@@ -34,10 +35,12 @@ pandocfilters==1.4.2
 parso==0.1.1
 pexpect==4.4.0
 pickleshare==0.7.4
-pkg-resources==0.0.0
+polyglot==16.7.4
 prompt-toolkit==1.0.15
 ptyprocess==0.5.2
+pycld2==0.31
 Pygments==2.2.0
+PyICU==2.0.3
 pylint==1.8.2
 pyparsing==2.2.0
 python-dateutil==2.6.1

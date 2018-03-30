@@ -2,7 +2,7 @@ Missing configs
 ---------
 -   Cinnamon keyboard layout and shortcut config inc. Keyboard Layout Options
 -   How to save or automatically setup custom Cinnamon menu items
-  -   See <https://unix.stackexchange.com/questions/205233/how-to-add-shortcut-to-cinnamon-taskbar>
+  -   See [how-to-add-shortcut-to-cinnamon-taskbar](https://unix.stackexchange.com/questions/205233/how-to-add-shortcut-to-cinnamon-taskbar)
 -   Skype configs
 -   Slack configs
 
@@ -15,4 +15,9 @@ List of the packages considered to be added to packages.list
 
 Remove packages
 ---------------
-List the packages that should be removed after installation
+List the packages that should be removed after installation.
+
+Extra
+-----
+-   Remove the packages installed only for testing [LaMachine](https://github.com/proycon/LaMachine/issues/61) environment.
+-   Change the flag of Philippines
