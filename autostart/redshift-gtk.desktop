@@ -11,3 +11,4 @@ Comment=Color temperature adjustment tool
 StartupNotify=true
 Exec=redshift-gtk
 Terminal=false
+X-GNOME-Autostart-Delay=10

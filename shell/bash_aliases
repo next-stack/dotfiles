@@ -1,21 +1,13 @@
 #!/bin/bash
 
 # Python
-alias python='python3'
-alias python3='python3.6'
+alias python='python3.6'
 
-# Environments
+# Environment Control
+alias venv='virtualenv -p python3 .env'
 alias src='. .env/bin/activate'
 alias srch='. env/bin/activate'
-alias lama='. $HOME/lamachine/bin/activate'
 alias deac='deactivate'
-
-# Program Shortcuts
-alias pmr='python manage.py runserver'
-alias jnote='jupyter notebook'
-alias venv='virtualenv -p python3 .env'
-# alias pyanac="export PATH='~/Anaconda3/bin:$PATH'"
-# alias bfg='java -jar $HOME/bfg.jar' : Git history cleaner
 
 # Git aliases
 alias gadd='git add'
@@ -26,8 +18,19 @@ alias gcek='git checkout'
 alias gsta='git status'
 alias gbra='git branch'
 alias gpus='git push'
+alias gpush='git push'
 alias gpul='git pull'
+alias gpull='git pull'
 alias gclo='git clone'
+
+# Screen Control
+alias scr='screen'
+alias scrs='screen -S'
+alias scrr='screen -r'
+alias scrl='screen -ls'
+killscr () {
+  screen -X -S $1 quit
+}
 
 # Folder Navigation;
 alias ..='cd ..'
@@ -38,12 +41,17 @@ alias cdflo='cd $HOME/Dropbox/workspaces/FloodTags/'
 alias cddash='cd $HOME/Dropbox/workspaces/FloodTags/Data_Distribution/dashboard/'
 alias cdeifd='cd $HOME/Dropbox/workspaces/Python/EIFD/'
 
-# ls aliases
-alias la='ls -A'
-alias ll='ls -al'
-alias lls='ls -lsh'
+# Django
+alias pmr='python manage.py runserver'
 
-# Color support of ls
+# Jupyter Notebook
+alias jnote='jupyter notebook'
+alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
+
+# ls and ls color
+alias ll='ls -l'
+alias la='ls -A'
+alias lal='ls -lah'
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
