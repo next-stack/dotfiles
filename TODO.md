@@ -21,4 +21,3 @@ List the packages that should be removed after installation.
 Extra
 -----
 -   Remove the packages installed only for testing [LaMachine](https://github.com/proycon/LaMachine/issues/61) environment.
--   Change the flag of Philippines
