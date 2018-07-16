@@ -19,10 +19,10 @@
   latextools: {}
   "linter-pylint":
     disableTimeout: true
-    executablePath: "/home/mebasar/.env/bin/pylint"
+    executablePath: "%p/eifd/.env/bin/pylint"
   "linter-shellcheck": {}
   "linter-ui-default":
-    panelHeight: 69
+    panelHeight: 469
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
