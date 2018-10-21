@@ -8,7 +8,7 @@
   "dash-ui":
     themeColor: "White"
   editor:
-    fontSize: 13
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -19,7 +19,7 @@
   latextools: {}
   "linter-pylint":
     disableTimeout: true
-    executablePath: "%p/eifd/.env/bin/pylint"
+    executablePath: "%p/.env/bin/pylint"
   "linter-shellcheck": {}
   "linter-ui-default":
     panelHeight: 469
