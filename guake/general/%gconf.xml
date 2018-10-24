@@ -6,7 +6,7 @@
 	<entry name="use_vte_titles" mtime="1507904742" type="bool" value="true"/>
 	<entry name="start_fullscreen" mtime="1507904730" type="bool" value="false"/>
 	<entry name="window_height_f" mtime="1516197695" type="float" value="81.902199999999993"/>
-	<entry name="window_height" mtime="1516197695" type="int" value="81"/>
+	<entry name="window_height" mtime="1540135198" type="int" value="79"/>
 	<entry name="use_visible_bell" mtime="1507904673" type="bool" value="false"/>
 	<entry name="compat_delete" mtime="1516197695" type="string">
 		<stringvalue>delete-sequence</stringvalue>

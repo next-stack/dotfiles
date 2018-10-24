@@ -10,9 +10,3 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
-# BEGIN LAMACHINE MANAGED BLOCK - path
-if [[ "$PATH" != *"/home/mebasar/bin"* ]]; then
-    export PATH=~/bin:$PATH #add ~/bin to $PATH, that is where the activation scripts are
-fi
-# END LAMACHINE MANAGED BLOCK - path
