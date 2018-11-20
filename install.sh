@@ -6,20 +6,21 @@ printerror () {
     echo "=======================================================" >&2
 }
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Updating Aptitude package manager..."
-echo "---------------------------------------------------------------------------"
+prinlog () {
+    echo
+    echo "---------------------------------------------------------------------------" >&2
+    echo "$1"
+    echo "---------------------------------------------------------------------------" >&2
+}
+
+prinlog "Updating Aptitude package manager..."
 sudo apt-get update
 
 SYSTEMPKGS="$(cat system-packages.txt)"
 
 for package in $SYSTEMPKGS; do
 
-  echo
-  echo "---------------------------------------------------------------------------"
-  echo "Installing $package"
-  echo "---------------------------------------------------------------------------"
+  prinlog "Installing $package"
 
   if ! sudo apt-get -qq install $package; then
 
@@ -58,66 +59,45 @@ if [ ! -d $DEBPKGS ]; then
   mkdir $DEBPKGS
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
-echo "---------------------------------------------------------------------------"
+prinlog "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
 if [ ! -f $DEBPKGS/google-chrome.deb ]; then
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DEBPKGS/google-chrome.deb || printerror "Unable to download Google Chrome"
 else
   echo "Already downloaded"
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Downloading Atom (See https://atom.io/)"
-echo "---------------------------------------------------------------------------"
+prinlog "Downloading Atom (See https://atom.io/)"
 if [ ! -f $DEBPKGS/atom.deb ]; then
   wget https://atom.io/download/deb -O $DEBPKGS/atom.deb || printerror "Unable to download Atom"
 else
   echo "Already downloaded"
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Downloading WhatsApp-Desktop (See https://github.com/Enrico204/Whatsapp-Desktop)"
-echo "---------------------------------------------------------------------------"
+prinlog "Downloading WhatsApp-Desktop (See https://github.com/Enrico204/Whatsapp-Desktop)"
 if [ ! -f $DEBPKGS/whatsapp-desktop.deb ]; then
   wget https://github.com/Enrico204/Whatsapp-Desktop/releases/download/v0.3.13/whatsapp-desktop_0.3.13-1_amd64.deb -O $DEBPKGS/whatsapp-desktop.deb || printerror "Unable to download Whatsapp-Desktop"
 else
   echo "Already downloaded"
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Downloading Slack (See https://slack.com/downloads/linux)"
-echo "---------------------------------------------------------------------------"
+prinlog "Downloading Slack (See https://slack.com/downloads/linux)"
 if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
   wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb -O $DEBPKGS/slack-desktop.deb || printerror "Unable to download Slack"
 else
   echo "Already downloaded"
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
-echo "---------------------------------------------------------------------------"
+prinlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
 if [ ! -f $DEBPKGS/keybase.deb ]; then
   wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb || printerror "Unable to download Keybase"
 else
   echo "Already downloaded"
 fi
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Installing downloaded .deb packages under $DEBPKGS/"
-echo "---------------------------------------------------------------------------"
+prinlog "Installing downloaded .deb packages under $DEBPKGS/"
 sudo dpkg -i $DEBPKGS/*.deb || printerror "Unable to install dowloaded .deb packages"
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Installing the missing dependencies (if there is any)"
-echo "---------------------------------------------------------------------------"
+prinlog "Installing the missing dependencies (if there is any)"
 sudo apt-get install -f
 
 echo
@@ -129,8 +109,5 @@ while true; do
   esac
 done
 
-echo
-echo "---------------------------------------------------------------------------"
-echo "Bootstrapping"
-echo "---------------------------------------------------------------------------"
+prinlog "Bootstrapping"
 bash bootstrap.sh

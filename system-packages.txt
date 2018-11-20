@@ -21,3 +21,5 @@ tlp
 tree
 virtualenv
 wget
+htop
+watch
