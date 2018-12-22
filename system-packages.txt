@@ -2,9 +2,9 @@ build-essential
 cmake
 curl
 git
+gedit
 guake
 imagemagick
-nemo-dropbox
 numlockx
 openjdk-8-jre-headless
 openvpn
@@ -16,8 +16,6 @@ shellcheck
 skypeforlinux
 spotify-client
 steam
-texlive-full
-tlp
 tree
 virtualenv
 wget

@@ -73,26 +73,19 @@ else
   echo "Already downloaded"
 fi
 
-prinlog "Downloading WhatsApp-Desktop (See https://github.com/Enrico204/Whatsapp-Desktop)"
-if [ ! -f $DEBPKGS/whatsapp-desktop.deb ]; then
-  wget https://github.com/Enrico204/Whatsapp-Desktop/releases/download/v0.3.13/whatsapp-desktop_0.3.13-1_amd64.deb -O $DEBPKGS/whatsapp-desktop.deb || printerror "Unable to download Whatsapp-Desktop"
-else
-  echo "Already downloaded"
-fi
-
 prinlog "Downloading Slack (See https://slack.com/downloads/linux)"
 if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
-  wget https://downloads.slack-edge.com/linux_releases/slack-desktop-2.8.2-amd64.deb -O $DEBPKGS/slack-desktop.deb || printerror "Unable to download Slack"
+  wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb -O $DEBPKGS/slack-desktop.deb || printerror "Unable to download Slack"
 else
   echo "Already downloaded"
 fi
 
-prinlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
-if [ ! -f $DEBPKGS/keybase.deb ]; then
-  wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb || printerror "Unable to download Keybase"
-else
-  echo "Already downloaded"
-fi
+#prinlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
+#if [ ! -f $DEBPKGS/keybase.deb ]; then
+#  wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb || printerror "Unable to download Keybase"
+#else
+#  echo "Already downloaded"
+#fi
 
 prinlog "Installing downloaded .deb packages under $DEBPKGS/"
 sudo dpkg -i $DEBPKGS/*.deb || printerror "Unable to install dowloaded .deb packages"
@@ -108,6 +101,11 @@ while true; do
     * ) rm -rf $DEBPKGS; break;;
   esac
 done
+
+prinlog "Updating & Upgrading & Autoremoving"
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
 
 prinlog "Bootstrapping"
 bash bootstrap.sh
