@@ -6,21 +6,21 @@ printerror () {
     echo "=======================================================" >&2
 }
 
-prinlog () {
+printlog () {
     echo
     echo "---------------------------------------------------------------------------" >&2
     echo "$1"
     echo "---------------------------------------------------------------------------" >&2
 }
 
-prinlog "Updating Aptitude package manager..."
+printlog "Updating Aptitude package manager..."
 sudo apt-get update
 
 SYSTEMPKGS="$(cat system-packages.txt)"
 
 for package in $SYSTEMPKGS; do
 
-  prinlog "Installing $package"
+  printlog "Installing $package"
 
   if ! sudo apt-get -qq install $package; then
 
@@ -59,38 +59,38 @@ if [ ! -d $DEBPKGS ]; then
   mkdir $DEBPKGS
 fi
 
-prinlog "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
+printlog "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
 if [ ! -f $DEBPKGS/google-chrome.deb ]; then
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DEBPKGS/google-chrome.deb || printerror "Unable to download Google Chrome"
 else
   echo "Already downloaded"
 fi
 
-prinlog "Downloading Atom (See https://atom.io/)"
+printlog "Downloading Atom (See https://atom.io/)"
 if [ ! -f $DEBPKGS/atom.deb ]; then
   wget https://atom.io/download/deb -O $DEBPKGS/atom.deb || printerror "Unable to download Atom"
 else
   echo "Already downloaded"
 fi
 
-prinlog "Downloading Slack (See https://slack.com/downloads/linux)"
+printlog "Downloading Slack (See https://slack.com/downloads/linux)"
 if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
   wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb -O $DEBPKGS/slack-desktop.deb || printerror "Unable to download Slack"
 else
   echo "Already downloaded"
 fi
 
-#prinlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
+#printlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
 #if [ ! -f $DEBPKGS/keybase.deb ]; then
 #  wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb || printerror "Unable to download Keybase"
 #else
 #  echo "Already downloaded"
 #fi
 
-prinlog "Installing downloaded .deb packages under $DEBPKGS/"
+printlog "Installing downloaded .deb packages under $DEBPKGS/"
 sudo dpkg -i $DEBPKGS/*.deb || printerror "Unable to install dowloaded .deb packages"
 
-prinlog "Installing the missing dependencies (if there is any)"
+printlog "Installing the missing dependencies (if there is any)"
 sudo apt-get install -f
 
 echo
@@ -102,10 +102,37 @@ while true; do
   esac
 done
 
-prinlog "Updating & Upgrading & Autoremoving"
+printlog "Updating & Upgrading & Autoremoving"
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get autoremove
 
-prinlog "Bootstrapping"
+printlog "Bootstrapping"
 bash bootstrap.sh
+
+printlog "Creating Python virtual environment '.env' into $HOME"
+PYTHON=$(which python3)
+echo "Using version $($PYTHON --version 2>&1)"
+PKGS_PATH=$BASEDIR/python-env/python-packages.txt
+echo "Installing Python packages given in $PKGS_PATH"
+echo
+virtualenv --python=$PYTHON $HOME/.env
+# shellcheck source=$HOME/.env/bin/activate
+source $HOME/.env/bin/activate
+pip install --upgrade pip
+pip install -r $PKGS_PATH
+deactivate
+
+GAMESDIR=$HOME/Games
+if [ ! -d $GAMESDIR ]; then
+  mkdir $GAMESDIR
+fi
+
+echo
+while true; do
+  read -p "Do you want to install Re-Volt? [Y/n]: " yn
+  case $yn in
+    [Nn]* ) break;;
+    * ) bash $BASEDIR/re-volt/install.sh; break;;
+  esac
+done

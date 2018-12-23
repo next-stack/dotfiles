@@ -13,6 +13,7 @@ List of the packages considered to be added to packages.list
 -   GRUB customizer
 -   Heroku
 -   Node.js, npm
+-   CUDA & cuDNN ?
 
 Remove packages
 ---------------

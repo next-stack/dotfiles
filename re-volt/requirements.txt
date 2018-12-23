@@ -1,0 +1,13 @@
+libsdl2-2.0-0
+libsdl2-image-2.0-0
+libopenal1
+libenet7
+libunistring2
+libjpeg8
+libpng16-16
+libtiff5
+libwebp6
+libvorbisfile3
+libflac8
+libmpg123-0
+libfluidsynth1

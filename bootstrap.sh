@@ -1,11 +1,15 @@
 #!/bin/bash
 
+printlog () {
+    echo
+    echo "---------------------------------------------------------------------------" >&2
+    echo "$1"
+    echo "---------------------------------------------------------------------------" >&2
+}
+
 BASEDIR="$(pwd)"
 
-echo
-echo "--------------------------------------------------------"
-echo "Setting up symlinks"
-echo "--------------------------------------------------------"
+printlog "Setting up symlinks"
 
 # Git
 sudo ln -sfn $BASEDIR/git/gitconfig $HOME/.gitconfig
@@ -44,10 +48,7 @@ sudo ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
 # Numlockx
 sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
 
-echo
-echo "--------------------------------------------------------"
-echo "Creating OpenVPN scripts"
-echo "--------------------------------------------------------"
+printlog "Creating OpenVPN scripts"
 if [ ! -d $BASEDIR/vpn ]; then
   mkdir $BASEDIR/vpn
 fi
@@ -61,18 +62,3 @@ if [ -f $LOGINCONF ]; then
   echo "" >> $OVPNFILE
   echo "auth-user-pass $LOGINCONF" >> $OVPNFILE
 fi
-
-echo
-echo "--------------------------------------------------------"
-echo "Creating Python virtual environment '.env' into $HOME"
-echo "--------------------------------------------------------"
-PYTHON=$(which python3)
-echo "Using version $($PYTHON --version 2>&1)"
-PKGS_PATH=$BASEDIR/python-env/python-packages.txt
-echo "Installing Python packages given in $PKGS_PATH"
-echo
-virtualenv --python=$PYTHON $HOME/.env
-source $HOME/.env/bin/activate
-pip install --upgrade pip
-pip install -r $PKGS_PATH
-deactivate
