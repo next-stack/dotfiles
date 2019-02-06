@@ -3,8 +3,8 @@
 	smudge = git hawser smudge %f
 	required = true
 [user]
-	name = M. Erkan Basar
-	email = erkan@mebasar.com
+	name = Simge Ekiz
+	email = simgeekiz48@gmail.com
 [core]
 	editor = nano
 [push]

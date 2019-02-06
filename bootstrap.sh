@@ -24,6 +24,7 @@ sudo ln -sfn $BASEDIR/shell/bash_logout $HOME/.bash_logout
 sudo ln -sfn $BASEDIR/scripts/tunnel.sh /usr/bin/tunnel
 sudo ln -sfn $BASEDIR/scripts/srunl.sh /usr/bin/srunl
 sudo ln -sfn $BASEDIR/scripts/chats.sh /usr/bin/chats
+sudo ln -sfn $BASEDIR/scripts/gu.sh /usr/bin/gu
 
 # Icons
 sudo ln -sfn $BASEDIR/icons/ $HOME/.icons
