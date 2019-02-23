@@ -48,7 +48,7 @@ alias cdsim='cd $HOME/workspaces/simge/'
 alias cderk='cd $HOME/workspaces/erkan/'
 alias cdflo='cd $HOME/workspaces/FloodTags/'
 alias cddash='cd $HOME/workspaces/FloodTags/Data_Distribution/dashboard/'
-alias cdneat='cd $HOME/workspaces/FloodTags/Enrichments/information-extraction/'
+alias cdneat='cd $HOME/workspaces/FloodTags/Enrichments/enrichment-neat/'
 
 # Django
 alias pmr='python manage.py runserver'

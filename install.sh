@@ -42,6 +42,8 @@ for package in $SYSTEMPKGS; do
       echo "deb https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skypeforlinux.list
       sudo apt-get update
 
+    elif [[  $package = "heroku" ]]; then
+      curl https://cli-assets.heroku.com/install.sh | sudo sh
     fi
 
     sudo apt-get install -y $package || printerror "Unable to install $package"

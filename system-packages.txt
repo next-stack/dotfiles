@@ -13,6 +13,7 @@ redshift-gtk
 screen
 screenfetch
 shellcheck
+heroku
 skypeforlinux
 spotify-client
 steam
