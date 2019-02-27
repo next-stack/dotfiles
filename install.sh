@@ -16,6 +16,7 @@ printlog () {
 printlog "Updating Aptitude package manager..."
 sudo apt-get update
 
+BASEDIR="$(pwd)"
 SYSTEMPKGS="$(cat system-packages.txt)"
 
 for package in $SYSTEMPKGS; do
@@ -44,6 +45,8 @@ for package in $SYSTEMPKGS; do
 
     elif [[  $package = "heroku" ]]; then
       curl https://cli-assets.heroku.com/install.sh | sudo sh
+      continue
+
     fi
 
     sudo apt-get install -y $package || printerror "Unable to install $package"
@@ -75,12 +78,12 @@ else
   echo "Already downloaded"
 fi
 
-printlog "Downloading Slack (See https://slack.com/downloads/linux)"
-if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
-  wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb -O $DEBPKGS/slack-desktop.deb || printerror "Unable to download Slack"
-else
-  echo "Already downloaded"
-fi
+#printlog "Downloading Slack (See https://slack.com/downloads/linux)"
+#if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
+#  wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb -O $DEBPKGS/slack-#desktop.deb || printerror "Unable to download Slack"
+#else
+#  echo "Already downloaded"
+#fi
 
 #printlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
 #if [ ! -f $DEBPKGS/keybase.deb ]; then
@@ -118,7 +121,7 @@ echo "Using version $($PYTHON --version 2>&1)"
 PKGS_PATH=$BASEDIR/python-env/python-packages.txt
 echo "Installing Python packages given in $PKGS_PATH"
 echo
-virtualenv --python=$PYTHON $HOME/.env
+virtualenv --system-site-packages --python=$PYTHON $HOME/.env
 # shellcheck source=$HOME/.env/bin/activate
 source $HOME/.env/bin/activate
 pip install --upgrade pip

@@ -17,31 +17,28 @@ alias gcam='git commit -am'
 alias gcek='git checkout'
 alias gsta='git status'
 alias gbra='git branch'
-alias gpus='git push'
 alias gpush='git push'
-alias gpul='git pull'
+alias gpus=gpush
 alias gpull='git pull'
-alias gclo='git clone'
+alias gpul=gpull
 alias gclone='git clone'
-alias gfet='git fetch'
+alias gclo=gclone
 alias gfetch='git fetch'
-
-# nvidia-prime Control
-alias nvidia='sudo prime-select nvidia'
+alias gfet=gfetch
 
 # Screen Control
 alias scr='screen'
 alias scrs='screen -S'
 alias scrr='screen -r'
-alias scrl='screen -ls'
 alias scrls='screen -ls'
+alias scrl=scrls
 killscr () {
   screen -X -S $1 quit
 }
 
 # Folder Navigation;
-alias ..='cd ..'
 alias cd..='cd ..'
+alias ..=cd..
 alias cddot='cd $HOME/.dotfiles'
 alias cdwork='cd $HOME/workspaces/'
 alias cdsim='cd $HOME/workspaces/simge/'
@@ -56,7 +53,7 @@ alias pmr='python manage.py runserver'
 # Jupyter Notebook
 alias jnote='jupyter notebook'
 alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
-alias jnotescreen='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
+alias jnotescreen=jnotescr
 
 # ls and ls color
 alias ll='ls -l'

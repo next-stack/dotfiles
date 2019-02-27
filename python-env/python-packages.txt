@@ -9,3 +9,4 @@ pylint
 polyglot
 json-lines
 joblib
+matplotlib

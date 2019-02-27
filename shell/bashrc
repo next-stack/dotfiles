@@ -56,8 +56,8 @@ unset color_prompt force_color_prompt
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Load alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    source $HOME/.bash_aliases
 fi
 
 # Enable programmable completion features
@@ -74,5 +74,6 @@ if [ -x /usr/bin/mint-fortune ]; then
 fi
 
 # To run cuDNN
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-export CUDA_HOME=/usr/local/cuda
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda-10.0
