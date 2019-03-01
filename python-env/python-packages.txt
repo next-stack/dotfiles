@@ -1,12 +1,12 @@
-jupyter
+requests
 numpy
+jupyter
 nltk
 pandas
-requests
 scipy
 scikit-learn
-pylint
 polyglot
+pylint
 json-lines
 joblib
 matplotlib

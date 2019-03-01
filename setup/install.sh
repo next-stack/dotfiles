@@ -17,7 +17,8 @@ printlog "Updating Aptitude package manager..."
 sudo apt-get update
 
 BASEDIR="$(pwd)"
-SYSTEMPKGS="$(cat system-packages.txt)"
+SYSTEMPKGS="$(cat apt-packages.txt)"
+DEBPKGS="deb-packages.txt"
 
 for package in $SYSTEMPKGS; do
 
@@ -58,42 +59,20 @@ for package in $SYSTEMPKGS; do
 
 done
 
-DEBPKGS=$HOME/Downloads/deb_packages
+DEBPATHS=$HOME/Downloads/deb_packages
 
-if [ ! -d $DEBPKGS ]; then
-  mkdir $DEBPKGS
+if [ ! -d $DEBPATHS ]; then
+  mkdir $DEBPATHS
 fi
 
-printlog "Downloading Google Chrome (See https://www.google.com/chrome/browser/desktop/index.html)"
-if [ ! -f $DEBPKGS/google-chrome.deb ]; then
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $DEBPKGS/google-chrome.deb || printerror "Unable to download Google Chrome"
-else
-  echo "Already downloaded"
-fi
+printlog "Downloading .deb packages under $DEBPATHS/"
+while IFS=' ' read -r url name
+do
+    wget $url -O $DEBPATHS/$name || printerror "Unable to download $name"
+done < "$DEBPKGS"
 
-printlog "Downloading Atom (See https://atom.io/)"
-if [ ! -f $DEBPKGS/atom.deb ]; then
-  wget https://atom.io/download/deb -O $DEBPKGS/atom.deb || printerror "Unable to download Atom"
-else
-  echo "Already downloaded"
-fi
-
-#printlog "Downloading Slack (See https://slack.com/downloads/linux)"
-#if [ ! -f $DEBPKGS/slack-desktop.deb ]; then
-#  wget https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.3-amd64.deb -O $DEBPKGS/slack-#desktop.deb || printerror "Unable to download Slack"
-#else
-#  echo "Already downloaded"
-#fi
-
-#printlog "Downloading Keybase (See https://keybase.io/docs/the_app/install_linux)"
-#if [ ! -f $DEBPKGS/keybase.deb ]; then
-#  wget https://prerelease.keybase.io/keybase_amd64.deb -O $DEBPKGS/keybase.deb || printerror "Unable to download Keybase"
-#else
-#  echo "Already downloaded"
-#fi
-
-printlog "Installing downloaded .deb packages under $DEBPKGS/"
-sudo dpkg -i $DEBPKGS/*.deb || printerror "Unable to install dowloaded .deb packages"
+printlog "Installing downloaded .deb packages under $DEBPATHS/"
+sudo dpkg -i $DEBPATHS/*.deb || printerror "Unable to install dowloaded .deb packages"
 
 printlog "Installing the missing dependencies (if there is any)"
 sudo apt-get install -f
@@ -103,7 +82,7 @@ while true; do
   read -p "Do you want to remove the downloaded .deb packages? [Y/n]: " yn
   case $yn in
     [Nn]* ) break;;
-    * ) rm -rf $DEBPKGS; break;;
+    * ) rm -rf $DEBPATHS; break;;
   esac
 done
 
