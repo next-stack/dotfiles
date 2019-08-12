@@ -2,4 +2,6 @@
 # This solution works to run nvidia-390 with kernel 4.15-generic
 sudo prime-select nvidia
 sudo update-alternatives --config x86_64-linux-gnu_gl_conf # set to auto mode
+dpkg -l | grep nvidia # make sure every package is for the same driver
 glxinfo|egrep "OpenGL vendor|OpenGL renderer"
+
