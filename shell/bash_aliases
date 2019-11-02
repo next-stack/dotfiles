@@ -69,7 +69,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Start Radboud Science VPN in a screen;
+# Start VPN connections in a screen;
 alias ruvpn='screen -S ruvpn bash -c "sudo openvpn $HOME/.dotfiles/vpn/openvpn-science-ru-nl.ovpn"'
 alias ftvpn='screen -S ftvpn bash -c "sudo openvpn $HOME/.dotfiles/vpn/openvpn-floodtags-basar.ovpn"'
 alias sruvpn='screen -S sruvpn bash -c "sudo openvpn $HOME/.dotfiles/vpn/s-openvpn-science-ru-nl.ovpn"'

@@ -14,12 +14,12 @@ usage() {
 }
 
 if [ $1 == "-r" ]; then
-  # skypeforlinux &> /dev/null
+  skypeforlinux &> /dev/null
   pidgin &
   slack --disable-gpu -u &> /dev/null
 
 elif [ $1 == "-k" ]; then
-  # killall -9 skypeforlinux
+  killall -9 skypeforlinux
   killall -9 pidgin
   killall -9 slack
 

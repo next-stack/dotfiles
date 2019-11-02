@@ -8,6 +8,7 @@
   "dash-ui":
     themeColor: "White"
   editor:
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -20,11 +21,16 @@
     disableTimeout: true
     executablePath: "%p/.env/bin/pylint"
   "linter-shellcheck": {}
+  "linter-stylelint":
+    disableWhenNoConfig: false
+    showIgnored: true
   "linter-ui-default":
-    panelHeight: 469
+    panelHeight: 451
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
+  "split-diff":
+    ignoreWhitespace: true
   "tree-view": {}
   welcome:
     showOnStartup: false
