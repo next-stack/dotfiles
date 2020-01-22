@@ -31,6 +31,7 @@
     useGitHubStyle: true
   "split-diff":
     ignoreWhitespace: true
-  "tree-view": {}
+  "tree-view":
+    focusOnReveal: false
   welcome:
     showOnStartup: false
