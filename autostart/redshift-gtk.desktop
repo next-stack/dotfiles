@@ -51,4 +51,4 @@ NoDisplay=false
 Hidden=false
 Name[en_US]=Redshift
 Comment[en_US]=Color temperature adjustment tool
-X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-Delay=5

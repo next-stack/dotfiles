@@ -8,6 +8,7 @@ imagemagick
 numlockx
 openjdk-8-jre-headless
 openvpn
+openssh-server
 python-pip
 virtualenv
 redshift-gtk

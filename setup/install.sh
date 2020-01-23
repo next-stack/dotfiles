@@ -32,8 +32,8 @@ for package in $SYSTEMPKGS; do
       sudo apt-get update
 
     elif [[ $package = "spotify-client" ]]; then
-      # source: https://www.spotify.com/nl/download/linux/
-      sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+      # source: https://www.spotify.com/download/linux/
+      curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
       echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
       sudo apt-get update
 
