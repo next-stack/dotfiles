@@ -7,14 +7,24 @@
 # sudo ln -sfn /path/to/folder/gu.sh /usr/bin/gu
 
 usage() {
-  echo "=========================== Manual ============================"
+  echo "=== Manual ==="
   echo "gu [e|s]"
-  echo "==============================================================="
-  exit
+  echo "=============="
+}
+
+current() {
+  echo "=== Current Local User ==="
+  git config user.name
+  git config user.email
+  echo "=========================="
 }
 
 [ $# -eq 0 ] && {
+  echo
+  current
+  echo
   usage
+  exit
 }
 
 if [ $1 == "e" ]; then
@@ -24,10 +34,11 @@ elif [ $1 == "s" ]; then
   USERNAME="Simge Ekiz"
   USEREMAIL="simgeekiz48@gmail.com"
 else
+  usage
   exit
 fi;
 
-git config --replace-all user.name "$USERNAME"
+git config --local --replace-all user.name "$USERNAME"
 git config user.name
-git config --replace-all user.email "$USEREMAIL"
+git config --local --replace-all user.email "$USEREMAIL"
 git config user.email

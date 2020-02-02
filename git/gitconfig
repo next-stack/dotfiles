@@ -2,9 +2,6 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[user]
-	name = Simge Ekiz
-	email = simgeekiz48@gmail.com
 [core]
 	editor = nano
 [push]
