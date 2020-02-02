@@ -26,7 +26,7 @@ alias gclo=gclone
 alias gfetch='git fetch'
 alias gfet=gfetch
 
-# Screen Control
+# screen control
 alias scr='screen'
 alias scrs='screen -S'
 alias scrr='screen -r'
@@ -36,6 +36,11 @@ killscr () {
   screen -X -S $1 quit
 }
 
+# tmux control
+alias tn='tmux new -t'
+alias ta='tmux a -t'
+alias tls='tmux ls'
+
 # Folder Navigation;
 alias cd..='cd ..'
 alias ..=cd..
@@ -43,6 +48,8 @@ alias cddot='cd $HOME/.dotfiles'
 alias cdwork='cd $HOME/workspaces/'
 alias cdsim='cd $HOME/workspaces/sim/'
 alias cderk='cd $HOME/workspaces/erk/'
+alias cdse='cd $HOME/workspaces/simerk/'
+alias cdbas='cd $HOME/workspaces/simerk/basar-dev/'
 alias cdflo='cd $HOME/workspaces/FloodTags/'
 alias cddash='cd $HOME/workspaces/FloodTags/Data_Distribution/dashboard/'
 alias cdneat='cd $HOME/workspaces/FloodTags/Enrichments/enrichment-neat/'
@@ -52,7 +59,7 @@ alias please='sudo'
 # Django
 alias pmr='python manage.py runserver'
 
-# Jupyter Notebook/Lab
+# Jupyter
 alias jnote='jupyter notebook'
 alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
 alias jlab='jupyter lab'

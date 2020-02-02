@@ -9,3 +9,5 @@ packages
 recovery
 split-diff
 nohup.out
+.atom-socket-secret*
+*secret*
