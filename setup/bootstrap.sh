@@ -29,9 +29,6 @@ sudo ln -sfn $BASEDIR/scripts/gu.sh /usr/bin/gu
 # Icons
 sudo ln -sfn $BASEDIR/icons/ $HOME/.icons
 
-# Guake
-#sudo ln -sfn $BASEDIR/guake/ $HOME/.gconf/apps/guake
-
 # Redshift
 sudo ln -sfn $BASEDIR/redshift/redshift.conf $HOME/.config/redshift.conf
 

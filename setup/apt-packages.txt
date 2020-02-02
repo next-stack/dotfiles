@@ -13,6 +13,7 @@ python-pip
 virtualenv
 redshift-gtk
 screen
+tmux
 screenfetch
 shellcheck
 heroku

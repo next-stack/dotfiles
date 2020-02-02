@@ -52,10 +52,11 @@ alias please='sudo'
 # Django
 alias pmr='python manage.py runserver'
 
-# Jupyter Notebook
+# Jupyter Notebook/Lab
 alias jnote='jupyter notebook'
 alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
-alias jnotescreen=jnotescr
+alias jlab='jupyter lab'
+alias jlabscr='screen -S jlab bash -c "source .env/bin/activate; jupyter lab"'
 
 # ls and ls color
 alias ll='ls -l'
