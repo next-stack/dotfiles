@@ -24,3 +24,4 @@ tree
 wget
 htop
 watch
+timeshift

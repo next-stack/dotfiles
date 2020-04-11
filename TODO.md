@@ -7,6 +7,7 @@ Missing configs
 Missing packages in list
 ------------------------
 List of the packages considered to be added to packages.list
+-   PyCharm
 -   gthumb
 -   GRUB customizer
 -   Node.js, npm

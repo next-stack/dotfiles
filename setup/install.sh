@@ -44,6 +44,10 @@ for package in $SYSTEMPKGS; do
       echo "deb https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skypeforlinux.list
       sudo apt-get update
 
+    elif [[  $package = "timeshift" ]]; then
+      sudo add-apt-repository -y ppa:teejee2008/ppa
+      sudo apt-get update
+
     elif [[  $package = "heroku" ]]; then
       curl https://cli-assets.heroku.com/install.sh | sudo sh
       continue
@@ -65,7 +69,7 @@ if [ ! -d $DEBPATHS ]; then
   mkdir $DEBPATHS
 fi
 
-printlog "Downloading .deb packages under $DEBPATHS/"
+printlog "Downloading .deb packages into $DEBPATHS/"
 while IFS=' ' read -r url name
 do
     wget $url -O $DEBPATHS/$name || printerror "Unable to download $name"
