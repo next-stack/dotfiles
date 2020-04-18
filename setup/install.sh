@@ -17,14 +17,14 @@ printlog "Updating Aptitude package manager..."
 sudo apt-get update
 
 BASEDIR="$(pwd)"
-SYSTEMPKGS="$(cat apt-packages.txt)"
-DEBPKGS="deb-packages.txt"
+SYSTEMPKGS="$(cat setup/apt-packages.txt)"
+DEBPKGS="setup/deb-packages.txt"
 
 for package in $SYSTEMPKGS; do
 
   printlog "Installing $package"
 
-  if ! sudo apt-get -qq install $package; then
+  if ! which $package > /dev/null; then
 
     if [[ $package = "tlp" ]]; then
       sudo apt-get remove laptop-mode-tools
@@ -89,9 +89,7 @@ sudo apt-get upgrade
 sudo apt-get autoremove
 
 printlog "Bootstrapping"
-cd ..
-bash bootstrap.sh
-cd ./setup
+bash setup/bootstrap.sh
 
 printlog "Creating Python virtual environment '.env' into $HOME"
 PYTHON=$(which python3)
