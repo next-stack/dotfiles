@@ -27,6 +27,7 @@ sudo ln -sfn $BASEDIR/scripts/chats.sh /usr/bin/chats
 sudo ln -sfn $BASEDIR/scripts/gu.sh /usr/bin/gu
 
 # Icons
+sudo rm -r $HOME/.icons
 sudo ln -sfn $BASEDIR/icons/ $HOME/.icons
 
 # Redshift
