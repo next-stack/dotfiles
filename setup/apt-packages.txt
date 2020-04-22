@@ -17,10 +17,11 @@ tmux
 screenfetch
 shellcheck
 heroku
-skypeforlinux
-spotify-client
-steam
 tree
 wget
 htop
 watch
+timeshift
+vlc
+steam
+spotify-client

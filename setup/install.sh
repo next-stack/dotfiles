@@ -17,14 +17,14 @@ printlog "Updating Aptitude package manager..."
 sudo apt-get update
 
 BASEDIR="$(pwd)"
-SYSTEMPKGS="$(cat apt-packages.txt)"
-DEBPKGS="deb-packages.txt"
+SYSTEMPKGS="$(cat setup/apt-packages.txt)"
+DEBPKGS="setup/deb-packages.txt"
 
 for package in $SYSTEMPKGS; do
 
   printlog "Installing $package"
 
-  if ! sudo apt-get -qq install $package; then
+  if ! which $package > /dev/null; then
 
     if [[ $package = "tlp" ]]; then
       sudo apt-get remove laptop-mode-tools
@@ -37,11 +37,8 @@ for package in $SYSTEMPKGS; do
       echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
       sudo apt-get update
 
-    elif [[ $package = "skypeforlinux" ]]; then
-      # source: https://askubuntu.com/questions/887389/how-to-install-skype-for-linux-in-ubuntu-16-04-via-console-only/964195
-      sudo apt-get install -y apt-transport-https
-      curl https://repo.skype.com/data/SKYPE-GPG-KEY | sudo apt-key add -
-      echo "deb https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skypeforlinux.list
+    elif [[  $package = "timeshift" ]]; then
+      sudo add-apt-repository -y ppa:teejee2008/ppa
       sudo apt-get update
 
     elif [[  $package = "heroku" ]]; then
@@ -65,7 +62,7 @@ if [ ! -d $DEBPATHS ]; then
   mkdir $DEBPATHS
 fi
 
-printlog "Downloading .deb packages under $DEBPATHS/"
+printlog "Downloading .deb packages into $DEBPATHS/"
 while IFS=' ' read -r url name
 do
     wget $url -O $DEBPATHS/$name || printerror "Unable to download $name"
@@ -92,7 +89,7 @@ sudo apt-get upgrade
 sudo apt-get autoremove
 
 printlog "Bootstrapping"
-bash bootstrap.sh
+bash setup/bootstrap.sh
 
 printlog "Creating Python virtual environment '.env' into $HOME"
 PYTHON=$(which python3)
