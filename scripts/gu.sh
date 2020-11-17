@@ -29,7 +29,7 @@ current() {
 
 if [ $1 == "e" ]; then
   USERNAME="Erkan Basar"
-  USEREMAIL="erkan@mebasar.com"
+  USEREMAIL="erkan@basar.dev"
 elif [ $1 == "s" ]; then
   USERNAME="Simge Ekiz"
   USEREMAIL="simgeekiz48@gmail.com"

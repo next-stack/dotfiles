@@ -2,7 +2,7 @@
 
 # Author: M. Erkan Basar
 # Website: http://www.mebasar.com
-# Email: erkan@mebasar.com
+# Email: erkan@basar.dev
 # GitHub: erkanbasar
 
 # Create a symlink to use it with a single command (as shown in Usage).

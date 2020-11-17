@@ -6,3 +6,6 @@
 	editor = nano
 [push]
 	default = simple
+[user]
+	email = erkan@basar.dev
+	name = Erkan Basar
