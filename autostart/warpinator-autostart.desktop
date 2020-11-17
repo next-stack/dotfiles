@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Warpinator
+Comment=Transfer files from one computer to another on the local network
+Icon=warpinator
+Exec=warpinator --autostart
+Categories=GNOME;GTK;Utility;
+X-GNOME-Autostart-enabled=false

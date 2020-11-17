@@ -60,8 +60,8 @@ alias please='sudo'
 alias pmr='python manage.py runserver'
 
 # Jupyter
-alias jnote='jupyter notebook'
-alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook"'
+alias jnote='jupyter notebook --no-browser'
+alias jnotescr='screen -S jnote bash -c "source .env/bin/activate; jupyter notebook --no-browser"'
 alias jlab='jupyter lab'
 alias jlabscr='screen -S jlab bash -c "source .env/bin/activate; jupyter lab"'
 

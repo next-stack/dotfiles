@@ -42,10 +42,7 @@ sudo rm -rf $HOME/.config/autostart/
 sudo ln -sfn $BASEDIR/autostart/ $HOME/.config/autostart
 
 # Pidgin
-sudo ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
-
-# Numlockx
-sudo ln -sfn $BASEDIR/numlockx/numlockx /etc/default/numlockx
+# sudo ln -sfn $BASEDIR/pidgin-purple/ $HOME/.purple
 
 printlog "Creating OpenVPN scripts"
 if [ ! -d $BASEDIR/vpn ]; then

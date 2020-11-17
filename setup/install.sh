@@ -14,7 +14,7 @@ printlog () {
 }
 
 printlog "Updating Aptitude package manager..."
-sudo apt-get update
+sudo apt update
 
 BASEDIR="$(pwd)"
 SYSTEMPKGS="$(cat setup/apt-packages.txt)"
@@ -27,19 +27,21 @@ for package in $SYSTEMPKGS; do
   if ! which $package > /dev/null; then
 
     if [[ $package = "tlp" ]]; then
-      sudo apt-get remove laptop-mode-tools
+      sudo apt remove laptop-mode-tools
       sudo add-apt-repository -y ppa:linrunner/tlp
-      sudo apt-get update
+      sudo apt update
 
     elif [[ $package = "spotify-client" ]]; then
+      # Do not install spotify from the Software manager
+      # The public key changes each time, consider checking the website
       # source: https://www.spotify.com/download/linux/
-      curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+      curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
       echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-      sudo apt-get update
+      sudo apt update
 
     elif [[  $package = "timeshift" ]]; then
       sudo add-apt-repository -y ppa:teejee2008/ppa
-      sudo apt-get update
+      sudo apt update
 
     elif [[  $package = "heroku" ]]; then
       curl https://cli-assets.heroku.com/install.sh | sudo sh
@@ -47,7 +49,7 @@ for package in $SYSTEMPKGS; do
 
     fi
 
-    sudo apt-get install -y $package || printerror "Unable to install $package"
+    sudo apt install -y $package || printerror "Unable to install $package"
 
   else
     echo "Already installed"
@@ -72,7 +74,7 @@ printlog "Installing downloaded .deb packages under $DEBPATHS/"
 sudo dpkg -i $DEBPATHS/*.deb || printerror "Unable to install dowloaded .deb packages"
 
 printlog "Installing the missing dependencies (if there is any)"
-sudo apt-get install -f
+sudo apt install -f
 
 echo
 while true; do
@@ -84,9 +86,9 @@ while true; do
 done
 
 printlog "Updating & Upgrading & Autoremoving"
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get autoremove
+sudo apt update
+sudo apt upgrade
+sudo apt autoremove
 
 printlog "Bootstrapping"
 bash setup/bootstrap.sh
