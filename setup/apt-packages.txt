@@ -8,7 +8,7 @@ imagemagick
 openjdk-8-jre-headless
 openvpn
 openssh-server
-python-pip
+python3-pip
 virtualenv
 redshift-gtk
 screen
